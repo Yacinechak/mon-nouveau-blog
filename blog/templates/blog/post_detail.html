@@ -1,0 +1,11 @@
+{% block content %}
+    <div class="billet">
+        {% if billet.published_date %}
+            <div class="date">
+                {{ billet.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ billet.title }}</h2>
+        <p>{{ billet.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

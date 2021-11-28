@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}    
+            {% block content %}
+                {% for billet in billets %}
+                    <div class="billet">
+                        <div class="date">
+                            <p>published: {{ billet.published_date }}</p>
+                        </div>
+                        <h2><a href="{% url 'post_detail' pk=billet.pk %}">{{ billet.title }}</a></h2>
+                        <p>{{ billet.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+            {% endblock %}
